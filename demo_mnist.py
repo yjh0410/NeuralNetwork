@@ -10,10 +10,6 @@ def train(path_to_datas, save_model_path):
     train_labels = np.zeros((labels.shape[0], 10))
     train_labels[np.arange(labels.shape[0]), labels.astype('int').reshape(-1)-1] = 1.0
 
-    if use_norm:
-        # 对输入数据进行归一化处理
-        train_datas, means, sigmas = tools.normalization(train_datas)
-
     # 设置训练所需的超参数
     batch_size = 100
     # 训练次数
